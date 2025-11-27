@@ -1,172 +1,177 @@
-OSI vs TCP/IP Models
+# **OSI vs TCP/IP Models**
 
-Comparative Analysis Report: OSI vs TCP/IP Models
-<img width="560" height="516" alt="image" src="https://github.com/user-attachments/assets/d590dd51-b40c-4744-ad91-639f336aac2c" />
-<img width="960" height="720" alt="image" src="https://github.com/user-attachments/assets/7c7ccca0-043a-4e93-bf39-da8fc6a98423" />
+# **Comparative Analysis Report: OSI vs TCP/IP Models**
+<img width="560" height="516" alt="image" src="https://github.com/user-attachments/assets/64ee3312-4cf7-4bef-a15b-57e36b7a1fb6" />
+<img width="960" height="720" alt="image" src="https://github.com/user-attachments/assets/816f4573-1ae3-44ca-a0ef-065d45bd002a" />
 
-1. Overview
-OSI Model (Open Systems Interconnection)
+---
 
-Developed by: ISO (International Organization for Standardization).
+# **1. Overview**
 
-Purpose: A theoretical reference model to standardize communication systems.
+## **OSI Model (Open Systems Interconnection)**
 
-Layers: 7 layers.
+- **Developed by:** ISO (International Organization for Standardization).
+- **Purpose:** A *theoretical reference model* to standardize communication systems.
+- **Layers:** **7 layers.**
+- **Nature:** Conceptual; not tightly tied to real-world internet architecture.
 
-Nature: Conceptual; not tightly tied to real-world internet architecture.
+## **TCP/IP Model (Internet Protocol Suite)**
 
-TCP/IP Model (Internet Protocol Suite)
+- **Developed by:** DARPA (U.S. DoD research).
+- **Purpose:** A *practical implementation model* used in real networks.
+- **Layers:** **4 layers** (sometimes described as 5 in extended academic versions).
+- **Nature:** Defines real protocols powering the Internet (e.g., IP, TCP, UDP).
 
-Developed by: DARPA (U.S. DoD research).
+---
 
-Purpose: A practical implementation model used in real networks.
+# **2. Layer-by-Layer Comparison**
+<img width="850" height="550" alt="image" src="https://github.com/user-attachments/assets/c878b537-2f5f-45fb-99ca-5685c9c42784" />
+<img width="1671" height="2048" alt="image" src="https://github.com/user-attachments/assets/58646dfc-2909-4ec4-9f28-42a14ad79b79" />
 
-Layers: 4 layers (sometimes described as 5 in extended academic versions).
+Below is a **precise mapping** and **functions**.
 
-Nature: Defines real protocols powering the Internet (e.g., IP, TCP, UDP).
+---
 
-2. Layer-by-Layer Comparison
+## **OSI Layer 7 – Application**
 
-<img width="850" height="550" alt="image" src="https://github.com/user-attachments/assets/eadc7cf8-3816-47e2-a091-b96a81db7627" />
-<img width="1671" height="2048" alt="image" src="https://github.com/user-attachments/assets/adcb1bd0-c945-42ad-9d8a-233b1dc28c81" />
+**Purpose:** Network services to end users (not the applications themselves).
 
+**Examples:** HTTP, FTP, DNS, SMTP.
 
-Below is a precise mapping and functions.
+**TCP/IP Equivalent:** **Application Layer**
 
-OSI Layer 7 – Application
+- Combines OSI layers **7, 6, 5** into one.
 
-Purpose: Network services to end users (not the applications themselves).
-Examples: HTTP, FTP, DNS, SMTP.
+---
 
-TCP/IP Equivalent: Application Layer
+## **OSI Layer 6 – Presentation**
 
-Combines OSI layers 7, 6, 5 into one.
-OSI Layer 6 – Presentation
+**Purpose:** Data formatting, encryption, compression.
 
-Purpose: Data formatting, encryption, compression.
-Examples: SSL/TLS (historically listed here), character encoding.
+**Examples:** SSL/TLS (historically listed here), character encoding.
 
-TCP/IP Equivalent: No direct layer; handled inside the Application layer.
+**TCP/IP Equivalent:** No direct layer; handled inside the **Application layer**.
 
-OSI Layer 5 – Session
+---
 
-Purpose: Session control, dialog maintenance.
-Examples: RPC, NetBIOS session services.
+## **OSI Layer 5 – Session**
 
-TCP/IP Equivalent: Also folded into Application layer.
+**Purpose:** Session control, dialog maintenance.
 
-OSI Layer 4 – Transport
+**Examples:** RPC, NetBIOS session services.
 
-Purpose: Reliable/unreliable delivery, segmentation, flow control.
-Examples: TCP (reliable), UDP (unreliable).
+**TCP/IP Equivalent:** Also folded into **Application layer**.
 
-TCP/IP Equivalent: Transport Layer
+---
 
-Same function.
+## **OSI Layer 4 – Transport**
 
-Almost identical in concept.
+**Purpose:** Reliable/unreliable delivery, segmentation, flow control.
 
-OSI Layer 3 – Network
+**Examples:** TCP (reliable), UDP (unreliable).
 
-Purpose: Routing, logical addressing, path determination.
-Examples: IP, ICMP, IPSec.
+**TCP/IP Equivalent:** **Transport Layer**
 
-TCP/IP Equivalent: Internet Layer
+- Same function.
+- Almost identical in concept.
 
-IP and routing protocols operate here.
-OSI Layer 2 – Data Link
+---
 
-Purpose: MAC addressing, framing, LAN communication.
-Examples: Ethernet, ARP, PPP, VLAN (IEEE 802.1Q).
+## **OSI Layer 3 – Network**
 
-TCP/IP Equivalent: Part of Network Access Layer.
+**Purpose:** Routing, logical addressing, path determination.
 
-OSI Layer 1 – Physical
+**Examples:** IP, ICMP, IPSec.
 
-Purpose: Transmission of raw bits over physical media.
-Examples: Cables, hubs, signaling, voltages.
+**TCP/IP Equivalent:** **Internet Layer**
 
-TCP/IP Equivalent: Also part of Network Access Layer.
+- IP and routing protocols operate here.
 
-3. Detailed Table: OSI vs TCP/IP Side-by-Side
-Feature	OSI Model	TCP/IP Model
-Number of Layers	7	4
-Purpose	Theoretical reference for understanding networks	Practical framework used in real networks
-Development Body	ISO	DARPA (U.S. DoD)
-Layer Dependence	Strict, well-separated	Flexible, protocol-driven
-Protocol Dependency	Protocol-independent	Protocol-specific (TCP, IP, etc.)
-Model Type	Descriptive	Implemented
-Error Handling	Provided at multiple layers	Primarily Transport + Internet layers
-Session/Presentation Layers	Defined separately	Merged into Application layer
-Transport Protocols	Conceptual (TCP/UDP mapped later)	Built-in (TCP, UDP)
-Network Communication Standard	Not used directly in the Internet	Backbone of today’s Internet
-4. Key Differences (Most Important Points)
+---
 
-Concise, high-confidence distinctions:
+## **OSI Layer 2 – Data Link**
 
-Origins & Purpose
+**Purpose:** MAC addressing, framing, LAN communication.
 
-OSI: Built to standardize network communication; mainly educational.
+**Examples:** Ethernet, ARP, PPP, VLAN (IEEE 802.1Q).
 
-TCP/IP: Built for real-world internetworking and reliability under military conditions.
+**TCP/IP Equivalent:** Part of **Network Access Layer**.
 
-Practical Use
+---
 
-TCP/IP runs the Internet.
+## **OSI Layer 1 – Physical**
 
-OSI mainly used for teaching, design, and troubleshooting frameworks.
+**Purpose:** Transmission of raw bits over physical media.
 
-Layer Structure
+**Examples:** Cables, hubs, signaling, voltages.
 
-OSI: 7 separate layers.
+**TCP/IP Equivalent:** Also part of **Network Access Layer**.
 
-TCP/IP: 4 merged layers, especially at the top.
+---
 
-Protocol Orientation
+# **3. Detailed Table: OSI vs TCP/IP Side-by-Side**
 
-OSI: Model-first, protocol-later.
+| Feature | OSI Model | TCP/IP Model |
+| --- | --- | --- |
+| **Number of Layers** | 7 | 4 |
+| **Purpose** | Theoretical reference for understanding networks | Practical framework used in real networks |
+| **Development Body** | ISO | DARPA (U.S. DoD) |
+| **Layer Dependence** | Strict, well-separated | Flexible, protocol-driven |
+| **Protocol Dependency** | Protocol-independent | Protocol-specific (TCP, IP, etc.) |
+| **Model Type** | Descriptive | Implemented |
+| **Error Handling** | Provided at multiple layers | Primarily Transport + Internet layers |
+| **Session/Presentation Layers** | Defined separately | Merged into Application layer |
+| **Transport Protocols** | Conceptual (TCP/UDP mapped later) | Built-in (TCP, UDP) |
+| **Network Communication Standard** | Not used directly in the Internet | Backbone of today’s Internet |
 
-TCP/IP: Protocol-first (TCP, IP defined early, model came second).
+---
 
-Session/Presentation Handling
+# **4. Key Differences (Most Important Points)**
 
-OSI: Explicit layers (5 and 6).
+**Concise, high-confidence distinctions:**
 
-TCP/IP: Handled inside the Application layer—no separate structure.
+1. **Origins & Purpose**
+    - **OSI:** Built to standardize network communication; mainly educational.
+    - **TCP/IP:** Built for real-world internetworking and reliability under military conditions.
+2. **Practical Use**
+    - **TCP/IP** runs the Internet.
+    - **OSI** mainly used for teaching, design, and troubleshooting frameworks.
+3. **Layer Structure**
+    - OSI: **7 separate layers**.
+    - TCP/IP: **4 merged layers**, especially at the top.
+4. **Protocol Orientation**
+    - OSI: Model-first, protocol-later.
+    - TCP/IP: Protocol-first (TCP, IP defined early, model came second).
+5. **Session/Presentation Handling**
+    - OSI: Explicit layers (5 and 6).
+    - TCP/IP: Handled inside the Application layer—no separate structure.
+6. **Implementation Strictness**
+    - OSI: Very strict, theoretical.
+    - TCP/IP: Flexible, practical.
+7. **Error Checking & Flow Control**
+    - OSI: Done at several layers.
+    - TCP/IP: Mostly handled by **TCP** or **application protocols**.
 
-Implementation Strictness
+---
 
-OSI: Very strict, theoretical.
+# **5. When to Use Which (Contextual Clarity)**
 
-TCP/IP: Flexible, practical.
+### **Use OSI model for:**
 
-Error Checking & Flow Control
+- Understanding **how** communication flows.
+- Designing or explaining network architectures.
+- Troubleshooting by isolating issues layer-wise.
 
-OSI: Done at several layers.
+### **Use TCP/IP model for:**
 
-TCP/IP: Mostly handled by TCP or application protocols.
+- Real-world implementations.
+- Configuring networks and devices.
+- Explaining how the Internet actually works.
 
-5. When to Use Which (Contextual Clarity)
-Use OSI model for:
+---
 
-Understanding how communication flows.
+# **6. Short Summary**
 
-Designing or explaining network architectures.
-
-Troubleshooting by isolating issues layer-wise.
-
-Use TCP/IP model for:
-
-Real-world implementations.
-
-Configuring networks and devices.
-
-Explaining how the Internet actually works.
-
-6. Short Summary
-
-OSI = Conceptual 7-layer educational model.
-
-TCP/IP = Real-world 4-layer operational model.
-
-Both describe data communication but at different abstraction levels.
+- **OSI** = Conceptual **7-layer educational model**.
+- **TCP/IP** = Real-world **4-layer operational model**.
+- Both describe data communication but at different abstraction levels.
