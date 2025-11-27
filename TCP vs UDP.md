@@ -1,116 +1,109 @@
-TCP vs UDP
+# **TCP vs UDP**
 
+---
 
-<img width="600" height="360" alt="image" src="https://github.com/user-attachments/assets/b60f0264-143d-44d0-8e75-765ac28f891c" />
-<img width="768" height="1024" alt="image" src="https://github.com/user-attachments/assets/c50a8cd4-f211-41dc-a824-a89c18832780" />
+# **1. Core Concept**
 
-1. Core Concept
-TCP — Connection-Oriented
+## **TCP — Connection-Oriented**
 
-A connection must be established before data transfer.
+- A **connection must be established** before data transfer.
+- Achieved using the **3-way handshake** (SYN → SYN-ACK → ACK).
+- Focuses on **reliability, ordered delivery, and correctness**.
 
-Achieved using the 3-way handshake (SYN → SYN-ACK → ACK).
+## **UDP — Connectionless**
 
-Focuses on reliability, ordered delivery, and correctness.
+- **No handshake**, no formal connection setup.
+- Sends data (datagrams) immediately.
+- Focuses on **speed, minimal overhead, low latency**.
 
-UDP — Connectionless
+---
 
-No handshake, no formal connection setup.
+# **2. Major Technical Differences**
 
-Sends data (datagrams) immediately.
+| Feature | TCP | UDP |
+| --- | --- | --- |
+| **Type** | Connection-oriented | Connectionless |
+| **Handshake** | Yes, 3-way | None |
+| **Reliability** | Guaranteed delivery (ACKs, retransmission) | No guarantee (best effort) |
+| **Ordering** | Packets arrive in order | Packets may arrive out of order |
+| **Error Checking** | Checksum + recovery | Checksum only (no recovery) |
+| **Speed** | Slower due to overhead | Faster, minimal overhead |
+| **Flow Control** | Yes (e.g., sliding window) | No |
+| **Congestion Control** | Yes (e.g., TCP Reno, CUBIC) | No |
+| **Data Format** | Stream-based | Message-based (datagrams) |
+| **Header Size** | Larger (20–60 bytes) | Smaller (8 bytes) |
 
-Focuses on speed, minimal overhead, low latency.
+---
 
-2. Major Technical Differences
-Feature	TCP	UDP
-Type	Connection-oriented	Connectionless
-Handshake	Yes, 3-way	None
-Reliability	Guaranteed delivery (ACKs, retransmission)	No guarantee (best effort)
-Ordering	Packets arrive in order	Packets may arrive out of order
-Error Checking	Checksum + recovery	Checksum only (no recovery)
-Speed	Slower due to overhead	Faster, minimal overhead
-Flow Control	Yes (e.g., sliding window)	No
-Congestion Control	Yes (e.g., TCP Reno, CUBIC)	No
-Data Format	Stream-based	Message-based (datagrams)
-Header Size	Larger (20–60 bytes)	Smaller (8 bytes)
-3. Reliability & Ordering
-TCP
+# **3. Reliability & Ordering**
 
-Uses ACKs, sequence numbers, and retransmission.
+### **TCP**
 
-Ensures every byte is delivered and in the correct order.
+- Uses **ACKs**, **sequence numbers**, and **retransmission**.
+- Ensures **every byte** is delivered and in the correct order.
+- If packets drop → TCP resends them.
 
-If packets drop → TCP resends them.
+### **UDP**
 
-UDP
+- No recovery, no acknowledgment, no ordering.
+- Packet loss remains **unnoticed** by the protocol.
+- Applications must handle reliability if needed.
 
-No recovery, no acknowledgment, no ordering.
+---
 
-Packet loss remains unnoticed by the protocol.
+# **4. Performance Characteristics**
 
-Applications must handle reliability if needed.
+### **TCP**
 
-4. Performance Characteristics
-TCP
+- More overhead → **slower but accurate**.
+- Suited for applications needing full data integrity.
 
-More overhead → slower but accurate.
+### **UDP**
 
-Suited for applications needing full data integrity.
+- Minimal overhead → **low latency & high throughput**.
+- Ideal for real-time transmissions or where some loss is acceptable.
 
-UDP
+---
 
-Minimal overhead → low latency & high throughput.
+# **5. Common Use Cases**
 
-Ideal for real-time transmissions or where some loss is acceptable.
+## **TCP Use Cases (when accuracy matters)**
 
-5. Common Use Cases
-TCP Use Cases (when accuracy matters)
+- Web browsing (HTTP/HTTPS)
+- File transfer (FTP, SFTP)
+- Emails (SMTP, IMAP, POP3)
+- Remote login (SSH)
 
-Web browsing (HTTP/HTTPS)
+## **UDP Use Cases (when speed matters)**
 
-File transfer (FTP, SFTP)
+- Video/voice streaming (VoIP)
+- Online gaming
+- DNS queries
+- Live broadcasts
+- DHCP
 
-Emails (SMTP, IMAP, POP3)
+---
 
-Remote login (SSH)
+# **6. When to Choose TCP vs UDP**
 
-UDP Use Cases (when speed matters)
+### Choose **TCP** if you need:
 
-Video/voice streaming (VoIP)
+- Reliability
+- Ordered data
+- No loss tolerated
+- Congestion management
+- A stable connection
 
-Online gaming
+### Choose **UDP** if you need:
 
-DNS queries
+- Speed
+- Low latency
+- Can tolerate loss
+- Real-time or multicast traffic
+- Lower protocol overhead
 
-Live broadcasts
+---
 
-DHCP
+# **7. Summary in One Sentence**
 
-6. When to Choose TCP vs UDP
-Choose TCP if you need:
-
-Reliability
-
-Ordered data
-
-No loss tolerated
-
-Congestion management
-
-A stable connection
-
-Choose UDP if you need:
-
-Speed
-
-Low latency
-
-Can tolerate loss
-
-Real-time or multicast traffic
-
-Lower protocol overhead
-
-7. Summary in One Sentence
-
-TCP prioritizes reliability and order through connection setup and checks, while UDP prioritizes speed and simplicity by sending datagrams without establishing a connection.
+**TCP prioritizes reliability and order through connection setup and checks, while UDP prioritizes speed and simplicity by sending datagrams without establishing a connection.**
